@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+
+:root {
+  --ancho-caja: 400px;
+  --background-body: hsl(0, 0%, 90%);
+  --background-form: hsl(0, 5%, 81%);
+  --background-input: hsl(30, 25%, 89%);
+  --background-button: hsl(185, 42%, 37%);
+  --background-button-hover: hsl(185, 58%, 25%);
+  --background-error: hsl(6, 63%, 50%);
+  --ancho-input: 380px;
+  --shadow-input: 0px 3px 0px hsl(28, 16%, 65%);
+  --shadow-button: 0px 3px 0px hsl(185, 58%, 25%);
+  --shadow-button-hover: 0px 3px 0px hsl(185, 42%, 37%);
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'League Spartan', sans-serif;
+  background-color: var(--background-body);
+  color: hsl(221, 14%, 31%);
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: var(--ancho-caja);
+  background-color: var(--background-form);
+  border-radius: 10px;
+  padding: 20px;
+  gap: 20px;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.icono {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  font-size: 50px;
+}
+
+.bajadaIcono {
+  font-size: 15px;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+input {
+  width: var(--ancho-input);
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  padding-left: 10px;
+  background-color: var(--background-input);
+  box-shadow: var(--shadow-input);
+}
+
+.registro {
+  width: 380px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--background-button);
+  box-shadow: var(--shadow-button);
+  color: hsl(30, 25%, 89%);
+  font-weight: 700;
+}
+
+.registro:hover {
+  background-color: var(--background-button-hover);
+  box-shadow: var(--shadow-button-hover);
+  cursor: pointer;
+}
+
+.mensajeError {
+  background-color: var(--background-error);
+  padding: 10px;
+  border-radius: 5px;
+  color: hsl(0, 0%, 100%);
+}

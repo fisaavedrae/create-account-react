@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/ec25724b35.js" crossorigin="anonymous"></script>
+  <title>Vite + React</title>
+</head>
+
+<body>
+  <div id="rootx"></div>
+  <div class="container">
+    <div class="layout">
+      <div class="titulo">
+        <h1>Crea una cuenta</h1>
+      </div>
+      <div class="social">
+        <div class="icono">
+          <i class="fa-brands fa-square-facebook"></i>
+          <i class="fa-brands fa-square-github"></i>
+          <i class="fa-brands fa-linkedin"></i>
+        </div>
+        <div class="bajadaIcono">O usa tu email para registrarte</div>
+      </div>
+      <div class="formulario">
+        <input type="text" id="nombre" placeholder="Nombre">
+        <input type="email" id="email" placeholder="tuemail@ejemplo.com">
+        <input type="password" id="password" placeholder="Contraseña">
+        <input type="password" id="password2" placeholder="Confirma tu contraseña">
+        <button class="registro">Registrarse</button>
+        <div class="mensajeError">Completa todos los campos!</div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>
