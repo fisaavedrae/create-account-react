@@ -39,7 +39,7 @@ body {
   width: 100vw;
 }
 
-.layout {
+.cards {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,6 +61,17 @@ h1 {
   align-items: center;
   justify-content: center;
   gap: 20px;
+  padding: 20px;
+}
+
+.socialButton {
+  border-radius: 50%;
+  border: 1px solid hsl(221, 14%, 31%);
+  font-size: 30px;
+  padding: 5px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
 }
 
 .icono {
@@ -69,7 +80,6 @@ h1 {
   align-items: center;
   justify-content: center;
   gap: 40px;
-  font-size: 50px;
 }
 
 i:hover {
@@ -89,32 +99,9 @@ i:hover {
   width: 100%;
 }
 
-input {
-  width: var(--ancho-input);
-  height: 30px;
-  border-radius: 5px;
-  border: none;
-  padding-left: 10px;
-  background-color: var(--background-input);
-  box-shadow: var(--shadow-input);
-}
 
-.registro {
-  width: 380px;
-  height: 30px;
-  border-radius: 5px;
-  border: none;
-  background-color: var(--background-button);
-  box-shadow: var(--shadow-button);
-  color: hsl(30, 25%, 89%);
-  font-weight: 700;
-}
 
-.registro:hover {
-  background-color: var(--background-button-hover);
-  box-shadow: var(--shadow-button-hover);
-  cursor: pointer;
-}
+
 
 .mensajeError {
   background-color: var(--background-error);
