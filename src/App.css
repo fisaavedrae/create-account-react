@@ -30,25 +30,15 @@ body {
   text-align: center;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  width: 100vw;
-}
 
-.cards {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.card {
   width: var(--ancho-caja);
   background-color: var(--background-form);
-  border-radius: 10px;
-  padding: 20px;
-  gap: 20px;
+}
+
+form,
+button {
+  width: var(--ancho-input);
 }
 
 h1 {
@@ -97,15 +87,4 @@ i:hover {
   justify-content: center;
   gap: 20px;
   width: 100%;
-}
-
-
-
-
-
-.mensajeError {
-  background-color: var(--background-error);
-  padding: 10px;
-  border-radius: 5px;
-  color: hsl(0, 0%, 100%);
 }

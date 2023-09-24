@@ -1,7 +1,7 @@
 
-const Titulo = () => {
+const Titulo = ({ titulo }) => {
     return (
-        <h3 className="card-title text-center">Crea una cuenta</h3>
+        <h3 className="card-title text-center">{titulo}</h3>
     )
 }
 

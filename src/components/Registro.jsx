@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import '../App.css'
-import Alert from './Alert.jsx'
+
 import Formulario from './Formulario.jsx'
 import Titulo from './Titulo.jsx'
 
@@ -12,7 +12,7 @@ function Registro() {
         <>
             <div className="container">
                 <div className="card mb-md-5">
-                    <Titulo />
+                    <Titulo titulo="Crear una cuenta" />
                     {/* Cristian */}
                     <div className="social">
                         <div className="icono">
@@ -28,7 +28,7 @@ function Registro() {
                         <Formulario />
                         {/* Felipe */}
                         {/* Conjunto */}
-                        <Alert />
+                        {/*<Alert />*/}
                         {/* Conjunto */}
                     </div>
                 </div>

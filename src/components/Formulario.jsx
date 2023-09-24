@@ -38,7 +38,7 @@ const Formulario = () => {
                 setError(true);
             }
             else {
-                setMensaje("registro exitoso");
+                setMensaje("Registro exitoso!!");
                 setTipoMensaje("alert alert-success");
                 setError(false);
             }
@@ -50,7 +50,7 @@ const Formulario = () => {
         var re = {
             'capital': /[A-Z]/,
             'digit': /[0-9]/,
-            'full': /^[@#][A-Za-z0-9]{8,16}$/
+            'full': /^[A-Za-z0-9]{8,16}$/
         };
         return re.capital.test(password) &&
             re.digit.test(password) &&
@@ -66,30 +66,30 @@ const Formulario = () => {
 
         <form method="post" onSubmit={handleSubmit}>
             <div className="mb-3">
-                <input type="text" name="nombre" placeholder="Nombre" onChange={(e) => setNombre(e.target.value)}
+                <input type="text" name="nombre" className="form-control" placeholder="Nombre" onChange={(e) => setNombre(e.target.value)}
                     value={nombre} />
             </div>
             <div className="mb-3">
-                <input type="text" name="email" placeholder="tuemail@ejemplo.com" onChange={(e) => setEmail(e.target.value)}
+                <input type="text" name="email" className="form-control" placeholder="tuemail@ejemplo.com" onChange={(e) => setEmail(e.target.value)}
                     value={email} />
             </div>
             <div className="mb-3">
-                <input type="password" id="password" placeholder="Contraseña" onChange={(e) => setPassword(e.target.value)}
+                <input type="password" id="password" className="form-control" placeholder="Contraseña" onChange={(e) => setPassword(e.target.value)}
                     value={password} />
             </div>
             <div className="mb-3">
-                <input type="password" id="password2" placeholder="Confirma tu contraseña" onChange={(e) => setPassword2(e.target.value)}
+                <input type="password" id="password2" className="form-control" placeholder="Confirma tu contraseña" onChange={(e) => setPassword2(e.target.value)}
                     value={password2} />
             </div>
             <div className="mb-3">
-                <p className="blockquote-footer">
+                <div id="emailHelp" class="form-text text-start">
                     La contraseña debe contener:
                     <ul className="text-start">
                         <li>al menos una mayúscula</li>
                         <li>al menos un dígito </li>
                         <li>tener entre 8 y 16 caracteres.</li>
                     </ul>
-                </p>
+                </div>
             </div>
             <div className="mb-3">
                 <button type="submit" className="btn btn-primary">Registrarse</button>
