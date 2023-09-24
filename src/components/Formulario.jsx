@@ -10,32 +10,67 @@ const Formulario = () => {
     const [tipoMensaje, setTipoMensaje] = useState('');
 
 
-    const validarDatos = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         //Validación;
         if (nombre === '' || password2 === '' || password === '' || email === '') {
             setMensaje("Todos los campos son obligatorios");
-            setTipoMensaje("alert-danger");
+            setTipoMensaje("alert alert-danger");
             setError(true);
             return;
         }
-        if (password !== password2) {
-            setMensaje("Las contraseñas no coinciden");
-            setTipoMensaje("alert-danger");
-            setError(true);
-            return;
+        else {
+            if (!validarEmail(email)) {
+                setMensaje("El email no es valido");
+                setTipoMensaje("alert alert-danger");
+                setError(true);
+                return;
+            }
+
+            if (password !== password2) {
+                setMensaje("Las contraseñas no coinciden");
+                setTipoMensaje("alert alert-danger");
+                setError(true);
+                return;
+            } else if (!validarPassword(password)) {
+                setMensaje("La contraseña debe cumplir con todos los requisitos");
+                setTipoMensaje("alert alert-danger");
+                setError(true);
+            }
+            else {
+                setMensaje("registro exitoso");
+                setTipoMensaje("alert alert-success");
+                setError(false);
+            }
         }
         setError(false);
     };
+
+    function validarPassword(password) {
+        var re = {
+            'capital': /[A-Z]/,
+            'digit': /[0-9]/,
+            'full': /^[@#][A-Za-z0-9]{8,16}$/
+        };
+        return re.capital.test(password) &&
+            re.digit.test(password) &&
+            re.full.test(password);
+    }
+
+    function validarEmail(email) {
+        const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    }
+
     return (
 
-        <form onSubmit={validarDatos}>
+        <form method="post" onSubmit={handleSubmit}>
             <div className="mb-3">
                 <input type="text" name="nombre" placeholder="Nombre" onChange={(e) => setNombre(e.target.value)}
                     value={nombre} />
             </div>
             <div className="mb-3">
-                <input type="email" name="email" placeholder="tuemail@ejemplo.com" onChange={(e) => setEmail(e.target.value)}
+                <input type="text" name="email" placeholder="tuemail@ejemplo.com" onChange={(e) => setEmail(e.target.value)}
                     value={email} />
             </div>
             <div className="mb-3">
@@ -47,10 +82,20 @@ const Formulario = () => {
                     value={password2} />
             </div>
             <div className="mb-3">
+                <p className="blockquote-footer">
+                    La contraseña debe contener:
+                    <ul className="text-start">
+                        <li>al menos una mayúscula</li>
+                        <li>al menos un dígito </li>
+                        <li>tener entre 8 y 16 caracteres.</li>
+                    </ul>
+                </p>
+            </div>
+            <div className="mb-3">
                 <button type="submit" className="btn btn-primary">Registrarse</button>
             </div>
             <div className={tipoMensaje} role="alert">{mensaje}</div>
-        </form>
+        </form >
 
     )
 }
