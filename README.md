@@ -1,8 +1,13 @@
-# React + Vite
+# Desafio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+En este desafío pondremos en práctica los conceptos aprendidos para controlar los estados de nuestros componentes en React.
+Para ello, un cliente nos solicita una aplicación en React que permita al usuario validar un formulario de registro utilizando los eventos onChange y onSubmit.
 
-Currently, two official plugins are available:
+# Supuestos
+Reemplacé el componente App por el de Registro, por que en el punto 1 se indica que este componente importa todos los demás.
+Usé Bootstrap desde el CDN
+Validé correos e integridad de password usando RegExp
+En el punto 5 se menciona el componente Login, pero no se entrega detalle de su función ni detalle, por lo tanto no lo desarrollé.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Repo](https://github.com/fisaavedrae/create-account-react) 
+- [Live app](https://create-account-react-alpha.vercel.app/) 

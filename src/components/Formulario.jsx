@@ -1,11 +1,12 @@
 import { useState } from 'react'
+import Alert from './Alert';
 
 const Formulario = () => {
     const [nombre, setNombre] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [password2, setPassword2] = useState('');
-    const [error, setError] = useState(false);
+
     const [mensaje, setMensaje] = useState('');
     const [tipoMensaje, setTipoMensaje] = useState('');
 
@@ -16,34 +17,34 @@ const Formulario = () => {
         if (nombre === '' || password2 === '' || password === '' || email === '') {
             setMensaje("Todos los campos son obligatorios");
             setTipoMensaje("alert alert-danger");
-            setError(true);
+
             return;
         }
         else {
             if (!validarEmail(email)) {
                 setMensaje("El email no es valido");
                 setTipoMensaje("alert alert-danger");
-                setError(true);
+
                 return;
             }
 
             if (password !== password2) {
                 setMensaje("Las contraseñas no coinciden");
                 setTipoMensaje("alert alert-danger");
-                setError(true);
+
                 return;
             } else if (!validarPassword(password)) {
                 setMensaje("La contraseña debe cumplir con todos los requisitos");
                 setTipoMensaje("alert alert-danger");
-                setError(true);
+                return;
             }
             else {
                 setMensaje("Registro exitoso!!");
                 setTipoMensaje("alert alert-success");
-                setError(false);
+                return;
             }
         }
-        setError(false);
+
     };
 
     function validarPassword(password) {
@@ -94,7 +95,7 @@ const Formulario = () => {
             <div className="mb-3">
                 <button type="submit" className="btn btn-primary">Registrarse</button>
             </div>
-            <div className={tipoMensaje} role="alert">{mensaje}</div>
+            <Alert tipoMensaje={tipoMensaje} mensaje={mensaje} />
         </form >
 
     )

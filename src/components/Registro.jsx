@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import '../App.css'
-
+import SocialButton from './SocialButton.jsx'
 import Formulario from './Formulario.jsx'
 import Titulo from './Titulo.jsx'
 
@@ -13,25 +13,16 @@ function Registro() {
             <div className="container">
                 <div className="card mb-md-5">
                     <Titulo titulo="Crear una cuenta" />
-
                     <div className="social">
                         <div className="icono">
-                            {/* Cristian */}
-                            <div className="socialButton"><i className="fa-brands fa-facebook"></i></div>
-                            <div className="socialButton"><i className="fa-brands fa-github"></i></div>
-                            <div className="socialButton"><i className="fa-brands fa-linkedin-in"></i></div>
-                            {/* Cristian */}
+                            <SocialButton icono="fa-brands fa-facebook" />
+                            <SocialButton icono="fa-brands fa-github" />
+                            <SocialButton icono="fa-brands fa-linkedin" />
                         </div>
                         <div className="card-subtitle mb-2 text-body-secondary">O usa tu email para registrarte</div>
                     </div>
-
                     <div className="formulario">
-                        {/* Felipe */}
                         <Formulario />
-                        {/* Felipe */}
-                        {/* Conjunto */}
-                        {/*<Alert />*/}
-                        {/* Conjunto */}
                     </div>
                 </div>
             </div>
