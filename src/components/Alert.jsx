@@ -1,7 +1,7 @@
 
-const Alert = ({ tipoMensaje, mensaje }) => {
+const Alert = ({ mensaje, color }) => {
     return (
-        <div className={tipoMensaje} role="alert">{mensaje}</div>
+        <div className={`alert alert-${color}`} role="alert">{mensaje}</div>
     )
 
 }

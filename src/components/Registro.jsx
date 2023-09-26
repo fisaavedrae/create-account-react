@@ -4,9 +4,10 @@ import '../App.css'
 import SocialButton from './SocialButton.jsx'
 import Formulario from './Formulario.jsx'
 import Titulo from './Titulo.jsx'
+import Alert from './Alert';
 
 function Registro() {
-    const [count, setCount] = useState(0)
+    const [alert, setAlert] = useState({ error: "", msg: "", color: "" });
 
     return (
         <>
@@ -22,7 +23,8 @@ function Registro() {
                         <div className="card-subtitle mb-2 text-body-secondary">O usa tu email para registrarte</div>
                     </div>
                     <div className="formulario">
-                        <Formulario />
+                        <Formulario setAlert={setAlert} />
+                        <Alert color={alert.color} mensaje={alert.msg} />
                     </div>
                 </div>
             </div>

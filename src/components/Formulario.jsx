@@ -1,50 +1,54 @@
 import { useState } from 'react'
-import Alert from './Alert';
 
-const Formulario = () => {
+
+const Formulario = ({ setAlert }) => {
     const [nombre, setNombre] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [password2, setPassword2] = useState('');
-
-    const [mensaje, setMensaje] = useState('');
-    const [tipoMensaje, setTipoMensaje] = useState('');
-
-
     const handleSubmit = (e) => {
         e.preventDefault();
         //Validación;
         if (nombre === '' || password2 === '' || password === '' || email === '') {
-            setMensaje("Todos los campos son obligatorios");
-            setTipoMensaje("alert alert-danger");
-
+            setAlert({
+                error: true,
+                msg: "Todos los campos son obligatorios",
+                color: "danger",
+            });
             return;
         }
         else {
             if (!validarEmail(email)) {
-                setMensaje("El email no es valido");
-                setTipoMensaje("alert alert-danger");
-
+                setAlert({
+                    error: true,
+                    msg: "El email no es valido",
+                    color: "danger",
+                });
                 return;
             }
 
             if (password !== password2) {
-                setMensaje("Las contraseñas no coinciden");
-                setTipoMensaje("alert alert-danger");
-
+                setAlert({
+                    error: true,
+                    msg: "Las contraseñas no coinciden",
+                    color: "danger",
+                });
                 return;
             } else if (!validarPassword(password)) {
-                setMensaje("La contraseña debe cumplir con todos los requisitos");
-                setTipoMensaje("alert alert-danger");
+                setAlert({
+                    error: true,
+                    msg: "La contraseña debe cumplir con todos los requisitos",
+                    color: "danger",
+                });
                 return;
             }
-            else {
-                setMensaje("Registro exitoso!!");
-                setTipoMensaje("alert alert-success");
-                return;
-            }
-        }
 
+            setAlert({
+                error: false,
+                msg: "Registro exitoso!!",
+                color: "success",
+            });
+        }
     };
 
     function validarPassword(password) {
@@ -64,8 +68,7 @@ const Formulario = () => {
     }
 
     return (
-
-        <form method="post" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <div className="mb-3">
                 <input type="text" name="nombre" className="form-control" placeholder="Nombre" onChange={(e) => setNombre(e.target.value)}
                     value={nombre} />
@@ -95,9 +98,7 @@ const Formulario = () => {
             <div className="mb-3">
                 <button type="submit" className="btn btn-primary">Registrarse</button>
             </div>
-            <Alert tipoMensaje={tipoMensaje} mensaje={mensaje} />
         </form >
-
     )
 }
 
