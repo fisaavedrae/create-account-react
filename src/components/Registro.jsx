@@ -24,7 +24,7 @@ function Registro() {
                     </div>
                     <div className="formulario">
                         <Formulario setAlert={setAlert} />
-                        <Alert color={alert.color} mensaje={alert.msg} />
+                        {alert.msg && <Alert color={alert.color} mensaje={alert.msg} />}
                     </div>
                 </div>
             </div>
